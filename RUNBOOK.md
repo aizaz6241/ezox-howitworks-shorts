@@ -8,7 +8,7 @@ fully automatic, every day. Do not stop to ask anything; take the most reasonabl
 ```bash
 W=/home/claude/run; mkdir -p $W && cd $W
 git clone https://github.com/aizaz6241/ezox-howitworks-shorts.git repo          # this repo (needs push access: add_repo owner=aizaz6241 repo=ezox-howitworks-shorts access=push)
-git clone https://github.com/Moh4696/cinematic-skill.git skill && git -C skill checkout bf435561c6203f90f971300efe952b68b5ec3417
+cp -r repo/vendor/cinematic-skill skill     # MIT-licensed copy of github.com/Moh4696/cinematic-skill @ bf435561 (kept here so the pipeline never breaks)
 S=$W/skill/skills/cinematic-film/scripts
 pip install --break-system-packages -q skia-python scipy numpy pillow
 mkdir -p fonts && curl -sL -o fonts/NotoNastaliqUrdu.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/notonastaliqurdu/NotoNastaliqUrdu%5Bwght%5D.ttf"
