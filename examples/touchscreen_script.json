@@ -1,0 +1,76 @@
+{
+ "title": "Touch screen kaise kaam karti hai",
+ "takes": [
+  {
+   "take": "T01_hook",
+   "lines": [
+    {
+     "id": 1,
+     "text": "دستانے پہن کر موبائل کیوں نہیں چلتا؟",
+     "spoken": "دستانے پہن کر موبائل کیوں نہیں چلتا؟",
+     "hero": "gloved finger taps a phone; nothing happens",
+     "typed": "WHY?",
+     "gap_after": 0.35
+    }
+   ]
+  },
+  {
+   "take": "T02_how",
+   "lines": [
+    {
+     "id": 2,
+     "text": "آپ کی اسکرین کے نیچے، بجلی کی باریک تاروں کا ایک جال ہے۔",
+     "spoken": "آپ کی اسکرین کے نیچے، بجلی کی باریک تاروں کا ایک جال ہے۔",
+     "hero": "the glass lifts away; a glowing grid of wires",
+     "typed": "TOUCH GRID"
+    },
+    {
+     "id": 3,
+     "text": "جس میں ہر وقت ہلکا سا سگنل دوڑتا رہتا ہے۔",
+     "spoken": "جس میں ہر وقت ہلکا سا سگنل دوڑتا رہتا ہے۔",
+     "hero": "pulses run along the wires",
+     "typed": ""
+    },
+    {
+     "id": 4,
+     "text": "ہمارا جسم بجلی گزارتا ہے، تو انگلی لگتے ہی تھوڑی بجلی انگلی میں کھنچ جاتی ہے۔",
+     "spoken": "ہمارا جسم بجلی گزارتا ہے، تو انگلی لگتے ہی تھوڑی بجلی انگلی میں کھنچ جاتی ہے۔",
+     "hero": "a bare finger lands; sparks flow up into it",
+     "typed": ""
+    },
+    {
+     "id": 5,
+     "text": "فون کی چِپ ایک سیکنڈ میں سو سے زیادہ بار چیک کرتی ہے، کہ آپ نے کہاں چھوا۔",
+     "spoken": "فون کی چِپ ایک سیکنڈ میں سو سے زیادہ بار چیک کرتی ہے، کہ آپ نے کہاں چھوا۔",
+     "hero": "scan lines sweep; counter 120 / SEC; crosshair locks on the touch",
+     "typed": "120+ / SEC"
+    }
+   ]
+  },
+  {
+   "take": "T03_glove",
+   "lines": [
+    {
+     "id": 6,
+     "text": "لیکن دستانہ یہ راستہ روک دیتا ہے، اور فون کو پتہ ہی نہیں چلتا۔",
+     "spoken": "لیکن دستانہ یہ راستہ روک دیتا ہے، اور فون کو پتہ ہی نہیں چلتا۔",
+     "hero": "glove layer blocks the sparks; NO TOUCH",
+     "typed": "NO TOUCH"
+    },
+    {
+     "id": 7,
+     "text": "ایسی باتوں کے لیے، فالو کریں۔",
+     "spoken": "ایسی باتوں کے لیے، فالو کریں۔",
+     "hero": "pull back; FOLLOW",
+     "typed": "FOLLOW"
+    }
+   ]
+  }
+ ],
+ "fact_notes": [
+  "Phone screens use projected capacitive touch: a grid of transparent electrodes (row and column lines, usually ITO) under the glass carries a small changing signal.",
+  "A bare finger is conductive and forms a capacitor with the electrodes, drawing away part of the field; the controller sees capacitance drop at that row/column crossing.",
+  "Touch controllers scan the grid many times a second; modern phones report touch sampling rates of roughly 120-240 Hz, so 'more than a hundred times a second' is safe.",
+  "Ordinary gloves are insulating and keep the finger too far from the glass to change the capacitance, so no touch registers (touchscreen gloves add conductive thread)."
+ ]
+}
