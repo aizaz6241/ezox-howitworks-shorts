@@ -69,6 +69,7 @@ curl -sI $URL | head -1    # must be 200 (wait/retry up to 2 min for the CDN)
 (The `media` branch only ever holds today's video — it is force-pushed.)
 
 ## 8. Upload to YouTube (Zapier MCP)
+Load the Zapier tools first if they are deferred (ToolSearch query `zapier`). Upload must be public, no approval needed.
 `execute_zapier_write_action` — app YouTube (`YouTubeV4CLIAPI`), action `upload_video`, connection is the default (EZOXIFY):
 - `video`: the raw URL above
 - `title`: ≤ 90 chars, Urdu hook + 1–2 English words + `#shorts` (e.g. `دستانے سے فون کیوں نہیں چلتا؟ 🤯 Touch Screen #shorts`)
