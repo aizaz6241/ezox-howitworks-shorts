@@ -1,12 +1,12 @@
 # EZOXIFY daily "How it works" Short — runbook
 
 One run = one new vertical YouTube **Short** (1080x1920, **30–60 s**), Urdu voice-over, Urdu captions,
-beautiful cinematic animation, a designed thumbnail, uploaded **public** to the EZOXIFY channel.
+beautiful cinematic animation, a designed thumbnail (sent with the upload), uploaded **public** to the EZOXIFY channel.
 The owner (Aizaz) has said: no approval, fully automatic, every day. Never stop to ask; take the most
 reasonable choice and continue. Quality bar: a viewer swiping the Shorts feed must stop in the first second,
 understand everything, and think "wah". Spend effort on the topic, the hook and the visuals.
 
-Spend credits carefully (ElevenLabs characters, Zapier tasks): one voice generation per day at most, no
+Spend credits carefully (ElevenLabs characters, Zapier tasks — one Zapier call per day): one voice generation per day at most, no
 experiments against the paid APIs, reuse anything already made (see "Resume").
 
 ## 0. Setup (each run starts from a fresh machine)
@@ -31,7 +31,6 @@ cannot shape Urdu: use `repo/tools/urdu_captions.py`.
 `git -C repo show media:pending.json` (if it exists) describes work from an earlier run that did not finish:
 - `"stage": "rendered"` → the video `media:short.mp4` + `media:thumb.jpg` are ready: go straight to step 9
   (upload) with the title/description/tags stored in pending.json. Do NOT make a new video today.
-- `"stage": "uploaded"` (thumbnail missing) → only do step 10 for its `video_id`, then continue normally.
 - `"stage": "voiced"` → `media:pending/` holds script.json + audio/: reuse them (skip steps 3–5 voice generation).
 
 ## 2. Don't double-post
@@ -112,22 +111,19 @@ for f in short.mp4 thumb.jpg; do curl -sI https://raw.githubusercontent.com/aiza
 One `execute_zapier_write_action` call: app YouTube (`YouTubeV4CLIAPI`), action `upload_video`
 (tool_name `youtube_upload_video`), default connection = EZOXIFY. No inspect calls needed — these params are known:
 - `video`: `https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/short.mp4`
+- `thumbnail`: `https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/thumb.jpg` (sent in the same call — no separate thumbnail call)
 - `title`: Roman Urdu, ≤ 70 chars, curiosity + 1 emoji + `#shorts` (e.g. `Dastane Se Phone Kyun Nahi Chalta? 🤯 #shorts`)
 - `description`: 2–3 Roman Urdu lines (what you'll learn) / blank line / 1–2 English lines / blank line /
   one Urdu-script line / blank line / `#howitworks #urdu #shorts #science #<topic> #EZOXIFY`
 - `language_code`: `en`, `localized_title`: the English title (≤ 70 chars + emoji + #shorts), `localized_description`: English description
 - `privacy_status` `public`, `made_for_kids` `false`, `notify_subscribers` `true`, `category_id` `27` (Education),
   `default_language` `ur`, `default_audio_language` `ur`, `tags`: 8–12 English/Roman Urdu/Urdu keywords
-Then update `pending.json` to `{"stage":"uploaded","video_id":...}` and push.
+**Zapier budget: exactly ONE Zapier call per day** — this upload. Do not call `upload_video_thumbnail`, the raw
+request action, or any inspect/list action (all parameters above are already known). Only if the upload call itself
+errors, retry it once.
 
-## 10. Thumbnail
-Wait ~4 minutes (the Short must finish processing), then one call: action `upload_video_thumbnail`
-(tool_name `youtube_update_video_thumbnail`), `video_id`, `thumbnail` =
-`https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/thumb.jpg`.
-If it fails, wait 4 more minutes and try once more; if it still fails, log `thumb: failed` (the next run retries via Resume).
-
-## 11. Log and clean up
-Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice","thumb"}`;
+## 10. Log and clean up
+Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice"}`;
 commit + push `main`. Then push `media` with `pending.json` deleted.
 
 ## Failure rules
