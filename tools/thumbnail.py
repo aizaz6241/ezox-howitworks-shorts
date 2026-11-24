@@ -95,7 +95,8 @@ def main():
         for w in words:
             ww = f.getlength(w)
             if w.strip("?!.,") in hi or w in hi:
-                t.rounded_rectangle((x - 18, y + f.size * 0.06, x + ww + 18, y + f.size * 1.04), 16, fill=YELLOW + (255,))
+                bb = f.getbbox(w)                     # box from the real glyph extent (fonts differ in ascent)
+                t.rounded_rectangle((x - 18, y + bb[1] - 16, x + ww + 18, y + bb[3] + 16), 16, fill=YELLOW + (255,))
                 t.text((x, y), w, font=f, fill=INK)
             else:
                 s.text((x + 8, y + 12), w, font=f, fill=(0, 0, 0, 200))
