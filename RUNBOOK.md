@@ -33,8 +33,12 @@ cannot shape Urdu: use `repo/tools/urdu_captions.py`.
   (upload) with the title/description/tags stored in pending.json. Do NOT make a new video today.
 - `"stage": "voiced"` → `media:pending/` holds script.json + audio/: reuse them (skip steps 3–5 voice generation).
 
-## 2. Don't double-post
-If `repo/log.json` already has today's date (Asia/Karachi) with a `video_id`, stop: nothing to do.
+## 2. Don't over-post — 2 Shorts a day
+The task fires twice a day. Count today's entries (Asia/Karachi date) in `repo/log.json` that have a `video_id`:
+- 2 or more → stop: nothing to do.
+- otherwise this run is `slot` = count + 1 (1 = first video of the day, 2 = second). Record it in the log entry.
+Both videos the same day must be different categories (and different from the last 2 entries, step 3).
+With 2 a day, keep scripts at 400–520 characters so ElevenLabs credits last the month.
 
 ## 3. Topic — something people are *dying* to know
 - Use `repo/topics_bank.md` (or invent a better one in that spirit). Never repeat or near-repeat a topic in
@@ -148,6 +152,9 @@ One `execute_zapier_write_action` call: app YouTube (`YouTubeV4CLIAPI`), action 
 `upload_video_thumbnail` or the raw request action. Only if the upload call itself errors, retry it once.
 
 ## 9b. Cross-post to TikTok / Instagram / X (Zapier → Buffer), only after the YouTube upload succeeded
+**Only for `slot` 1** (the first video of the day). Zapier is on the free plan (100 tasks/month): 2 YouTube uploads +
+1 Buffer post a day ≈ 90/month fits; posting both videos everywhere would not. Slot 2 skips this step
+(`"social": "skipped (slot 2)"`).
 Channels live in `repo/social.json`. First refresh the list (inspect calls are free, not Zapier tasks):
 `inspect_zapier_actions` with `tool_name` `buffer_add_to_queue`, `enum_property` `channelId`,
 `params` `{"organizationId": <social.json organizationId>}`. Any channel there that isn't in social.json
@@ -163,7 +170,7 @@ Then for each channel, one `execute_zapier_write_action`:
 A failed channel: retry once, then record the error and carry on — never block the log or the YouTube result.
 
 ## 10. Log and clean up
-Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice","social"}`
+Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice","slot","social"}`
 (`social`: `{"tiktok": "ok" | "fail: <reason>", ...}` from step 9b);
 commit + push `main`. Then push `media` with `pending.json` deleted.
 
