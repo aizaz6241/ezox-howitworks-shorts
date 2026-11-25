@@ -1,0 +1,36 @@
+{
+ "title": "Pyaaz Kata… Aur Aansoo Aa Gaye!",
+ "hook_roman": "PYAAZ NE RULA DIYA?!",
+ "takes": [
+  {"take": "T01_hook", "lines": [
+   {"id": 1, "text": "پیاز کٹا… اور آپ کی آنکھیں جلنے لگیں!", "spoken": "پیاز کٹا… اور آپ کی آنکھیں جلنے لگیں!",
+    "hero": "POV: your hands, a knife slices an onion on a board; eyes sting, a tear forms", "typed": "", "gap_after": 0.25},
+   {"id": 2, "text": "لیکن پیاز نے تو آپ کو چھوا تک نہیں… پھر یہ ہوا کیسے؟", "spoken": "لیکن پیاز نے تو آپ کو چھوا تک نہیں… پھر یہ ہوا کیسے؟",
+    "hero": "the gap between onion and eye; a question mark", "typed": "NO TOUCH?"}
+  ]},
+  {"take": "T02_story", "lines": [
+   {"id": 3, "text": "پیاز کے اندر ننھے ننھے خانے ہیں… ان میں دو چیزیں الگ الگ بند ہیں۔", "spoken": "پیاز کے اندر ننھے ننھے خانے ہیں… ان میں دو چیزیں الگ الگ بند ہیں۔",
+    "hero": "zoom into the onion slice: honeycomb of cells, yellow dots and purple dots kept apart", "typed": "LOCKED APART"},
+   {"id": 4, "text": "چھری چلتے ہی خانے ٹوٹتے ہیں… اور دونوں آپس میں مل جاتی ہیں۔", "spoken": "چھری چلتے ہی خانے ٹوٹتے ہیں… اور دونوں آپس میں مل جاتی ہیں۔",
+    "hero": "the blade cuts through the cells, walls burst, dots mix", "typed": "CELLS BREAK"},
+   {"id": 5, "text": "مل کر بنتی ہے ایک ان دیکھی گیس… جو سیدھی اوپر اڑتی ہے۔", "spoken": "مل کر بنتی ہے ایک ان دیکھی گیس… جو سیدھی اوپر اڑتی ہے۔",
+    "hero": "a green ghostly gas rises from the cut toward the eye", "typed": "INVISIBLE GAS"},
+   {"id": 6, "text": "گیس آنکھ تک پہنچی… اور آنکھ کو لگا، حملہ ہو گیا!", "spoken": "گیس آنکھ تک پہنچی… اور آنکھ کو لگا، حملہ ہو گیا!",
+    "hero": "big eye; gas touches it; red alarm rings", "typed": "ALARM!"},
+   {"id": 7, "text": "تو آنکھ آنسو بھیجتی ہے… اس گیس کو دھو ڈالنے کے لیے!", "spoken": "تو آنکھ آنسو بھیجتی ہے… اس گیس کو دھو ڈالنے کے لیے!",
+    "hero": "tears flood out and wash the gas away", "typed": "TEARS = WASH"}
+  ]},
+  {"take": "T03_payoff", "lines": [
+   {"id": 8, "text": "یعنی یہ آنسو… پیاز کا اپنا ہتھیار ہیں، جانوروں سے بچنے کا!", "spoken": "یعنی یہ آنسو… پیاز کا اپنا ہتھیار ہیں، جانوروں سے بچنے کا!",
+    "hero": "onion with a shield; a nibbling bug runs off", "typed": "ONION'S WEAPON"},
+   {"id": 9, "text": "ٹھنڈا پیاز، تیز چھری… اور آنسو کم!", "spoken": "ٹھنڈا پیاز، تیز چھری… اور آنسو کم!",
+    "hero": "back to the first frame: hands, knife, onion; frost on the onion; small FOLLOW tag", "typed": "COLD + SHARP"}
+  ]}
+ ],
+ "fact_notes": [
+  "Onion cells keep sulfur compounds (S-1-propenyl cysteine sulfoxide) apart from the enzyme alliinase; cutting breaks cells, they mix, and lachrymatory factor synthase makes syn-propanethial-S-oxide, a volatile gas (RSC Education, ACS Molecule of the Week, Library of Congress Everyday Mysteries).",
+  "The gas reaches the eyes, stimulates sensory nerves, and the tear glands release tears to flush it out (LOC, NPR, Discover).",
+  "The system is a chemical defence of the plant against animals/microbes (Discover, phys.org).",
+  "Chilling slows the gas; a sharp thin blade breaks fewer cells and sprays fewer droplets (Cornell 2024 study via Smithsonian, Physics World)."
+ ]
+}
