@@ -144,12 +144,27 @@ One `execute_zapier_write_action` call: app YouTube (`YouTubeV4CLIAPI`), action 
 - `language_code`: `en`, `localized_title`: the English title (≤ 70 chars + emoji + #shorts), `localized_description`: English description
 - `privacy_status` `public`, `made_for_kids` `false`, `notify_subscribers` `true`, `category_id` `27` (Education),
   `default_language` `ur`, `default_audio_language` `ur`, `tags`: 8–12 English/Roman Urdu/Urdu keywords
-**Zapier budget: exactly ONE Zapier call per day** — this upload. Do not call `upload_video_thumbnail`, the raw
-request action, or any inspect/list action (all parameters above are already known). Only if the upload call itself
-errors, retry it once.
+**Zapier budget: ONE YouTube call per day** plus one Buffer call per channel in step 9b. Do not call
+`upload_video_thumbnail` or the raw request action. Only if the upload call itself errors, retry it once.
+
+## 9b. Cross-post to TikTok / Instagram / X (Zapier → Buffer), only after the YouTube upload succeeded
+Channels live in `repo/social.json`. First refresh the list (inspect calls are free, not Zapier tasks):
+`inspect_zapier_actions` with `tool_name` `buffer_add_to_queue`, `enum_property` `channelId`,
+`params` `{"organizationId": <social.json organizationId>}`. Any channel there that isn't in social.json
+(Aizaz connected a new one in Buffer, e.g. Instagram or X): add it to social.json (platform from its label).
+Then for each channel, one `execute_zapier_write_action`:
+- `selected_api` `BufferCLIAPI`, `action` `update`, `tool_name` `buffer_add_to_queue`
+- `params`: `organizationId`, `channelId`, `attachment` `video`, `method` `share_now`, `text` (caption below),
+  `dynamic_properties`: `{"video": "https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/short.mp4"}`
+  plus, for TikTok, `"scheduling_type": "direct"`. For a channel type you haven't posted to before (Instagram, X),
+  call `inspect_zapier_actions` once with these params to see its extra required fields and fill them sensibly.
+- Caption: the Roman Urdu title without `#shorts`, one blank line, 1 short Roman Urdu curiosity line, then
+  `#howitworks #urdu #science #<topic> #EZOXIFY` (+ `#fyp` on TikTok, `#reels` on Instagram). For X keep it ≤ 250 chars.
+A failed channel: retry once, then record the error and carry on — never block the log or the YouTube result.
 
 ## 10. Log and clean up
-Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice"}`;
+Append to `repo/log.json`: `{"date","topic","category","title","title_en","video_id","duration","voice","social"}`
+(`social`: `{"tiktok": "ok" | "fail: <reason>", ...}` from step 9b);
 commit + push `main`. Then push `media` with `pending.json` deleted.
 
 ## Failure rules
@@ -159,4 +174,4 @@ commit + push `main`. Then push `media` with `pending.json` deleted.
   `pending.json` so tomorrow's run uploads it without new credits; end with a message telling Aizaz exactly
   what to fix (e.g. "Zapier mein YouTube reconnect karein").
 - Never write the API key into the repo, the log, a commit or any file.
-- Final message: 3–4 lines in Roman Urdu — topic, YouTube link, duration — or what failed and what to fix.
+- Final message: 3–4 lines in Roman Urdu — topic, YouTube link, duration, where it was cross-posted — or what failed and what to fix.

@@ -1,0 +1,7 @@
+{
+ "note": "Buffer channels the daily run cross-posts to (via Zapier 'Buffer' app, action buffer_add_to_queue). See RUNBOOK step 9b.",
+ "organizationId": "6b063f43eae0fc1b09bd1e73",
+ "channels": [
+  {"platform": "tiktok", "channelId": "6b063f668541f09ecb9537ac", "label": "you_know_fyi TikTok Account"}
+ ]
+}
