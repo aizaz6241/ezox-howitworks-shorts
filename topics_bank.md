@@ -2,7 +2,8 @@
 
 A good topic is a question people have *wondered about themselves* or something they use every day and never
 thought about, with a surprising answer that fits in 45 seconds. Pick one not in `log.json`, or invent a better
-one in the same spirit and add it here. Hook line = the question, said so it itches.
+one in the same spirit and add it here. The questions below are topics, not hooks: the spoken hook drops the
+viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki tanki full…".
 
 ## Phone & tech
 - Phone ki battery 100% ke baad charge kyun nahi hoti? (charge controller)

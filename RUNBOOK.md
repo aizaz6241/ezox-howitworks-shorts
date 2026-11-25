@@ -1,6 +1,6 @@
 # EZOXIFY daily "How it works" Short — runbook
 
-One run = one new vertical YouTube **Short** (1080x1920, **30–60 s**), Urdu voice-over, Urdu captions,
+One run = one new vertical YouTube **Short** (1080x1920, **25–40 s**, never over 45 s), Urdu voice-over, Urdu captions,
 beautiful cinematic animation, a designed thumbnail (sent with the upload), uploaded **public** to the EZOXIFY channel.
 The owner (Aizaz) has said: no approval, fully automatic, every day. Never stop to ask; take the most
 reasonable choice and continue. Quality bar: a viewer swiping the Shorts feed must stop in the first second,
@@ -41,16 +41,38 @@ If `repo/log.json` already has today's date (Asia/Karachi) with a `video_id`, st
   `log.json`; don't use the same category as the last 2 entries.
 - The test: would a normal person in Pakistan, seeing the question, *need* the answer? Everyday object or
   experience + surprising mechanism. No politics, religion, medical/financial advice, fear-bait or gore.
+- Prefer topics with a **moment the viewer has lived** (the click at the petrol pump, the jolt as you fall asleep,
+  the onion tears). The video is that moment, with the viewer inside it.
 - Verify the key facts with 2–3 web searches. Every claim simple and true.
 
-## 4. Script (Urdu script for voice and captions)
-- 9–13 lines, spoken 35–55 s, at most 1100 characters in total.
-- **Line 1 = the hook**, ≤ 2.5 s, a question that itches ("…kyun?" / "kabhi socha hai…?"). Line 2 opens a loop
-  ("jawab aap ki soch se bilkul alag hai"). Then the explanation in simple everyday words with one analogy,
-  each line one idea. One "wow" fact near the end. Last line = short follow CTA (vary the wording).
+### What the numbers told us (owner feedback, 2026-11-25)
+Day 1 (29 s, simple) got ~205 views; days 2–3 (57 s and 55 s, textbook-style explanations) got 2–10 views.
+Aizaz wants: **hook in the first 2–3 words**, the viewer *inside* the story, suspense at every turn, and the
+easiest possible words. So: short (25–40 s), story not lecture, no technical vocabulary, a twist every few seconds.
+
+## 4. Script — a story the viewer is *in* (Urdu script for voice and captions)
+- **6–9 lines, spoken 25–40 s, 400–600 characters in total.** Shorter beats longer: every line must earn its place.
+- **Line 1 = the hook, ≤ 2 s, and the first 2–3 words do the work.** Drop the viewer into the moment or hit them
+  with a shock, never a slow intro. Patterns that work:
+  - POV moment: "CLICK! Aap ki tanki full — aur petrol khud ruk gaya." / "Aap so rahe hain… aur achanak jhatka!"
+  - Shock claim: "Is nozzle mein koi sensor nahi… phir bhi ye sab jaanta hai."
+  - Direct dare: "Agli baar pump par ye dekhna…"
+  Not allowed as line 1: "Kya aap jaante hain…", "Aaj hum dekhenge…", "Kabhi socha hai…" or any line whose first words are filler.
+- **Second person, present tense, story order.** "Aap", "aap ki", "abhi". The viewer is the character; things happen to them.
+- **Open a loop at every turn**: each line ends making the next one necessary ("…lekin asli raaz abhi baqi hai",
+  "…aur phir hota hai kamaal", a half-answer, a "par kaise?"). No line may fully close the story before the payoff.
+- **Easiest words only.** Words a 12-year-old in Pakistan uses every day. No "venturi", "diaphragm", "capacitive",
+  "electrode", "vacuum" in speech — say "hawa", "rubber ki jhilli", "chhota sa suraakh". One everyday analogy max.
+  Technical names may appear only as small on-screen English labels.
+- Short sentences (≤ 10 words), one idea each, dramatic pauses with "…" and "—".
+- **Payoff then loop**: the reveal lands in the second-to-last line; the last line is ≤ 1.5 s and calls back to the
+  first frame (so the Short loops), optionally with a tiny follow nudge ("…roz aisa ek raaz — follow."). No long CTA.
+- Before voicing, read it aloud in your head as a viewer swiping: would you stop at word 2? Would you leave at
+  any line? If yes, rewrite that line. Example of the style: `examples/story_script.json`.
 - Each line: `"id"`, `"text"` (caption), `"spoken"` (same Urdu), `"hero"` (what's on screen), `"typed"`
   (short ENGLISH CAPS label or ""). Also top-level `"title"`, `"hook_roman"` (the hook in Roman Urdu CAPS,
-  3–7 words, e.g. `DASTANE SE PHONE KYUN NAHI CHALTA?`) and `"fact_notes"`. Shape: `examples/touchscreen_script.json`.
+  3–5 words, the moment or the shock, e.g. `PETROL KHUD RUK GAYA?!`) and `"fact_notes"`. Shape: `examples/story_script.json`
+  (the older `examples/touchscreen_script.json` shows the same fields but the old, slower style).
 
 ## 5. Voice (guarded)
 ```bash
@@ -61,7 +83,7 @@ python3 $S/build_narration.py --project $P --lead 0.25 --tail 1.0
 ```
 - credits.py exit 3 or 4: do NOT generate anything. Log `{"date","status":"skipped","reason"}` and end the run
   with a message telling Aizaz what to fix (top up / renew ElevenLabs). Exit 5: shorten the script, retry.
-- `audio/timing.json` `total_duration` must be 30–60 s. If it's off by a little, adjust gaps in segments.json and
+- `audio/timing.json` `total_duration` must be 22–45 s (aim 25–40). If it's off by a little, adjust gaps in segments.json and
   rerun build_narration (free). Only if it's way off, edit the script and regenerate just the changed lines.
 - Right after the voice is made, save it so a failure later never costs credits again:
   push `script.json` + `audio/` to `media:pending/` with `pending.json` `{"stage":"voiced",...}` (see step 8 for how to push).
@@ -69,11 +91,14 @@ python3 $S/build_narration.py --project $P --lead 0.25 --tail 1.0
 ## 6. Scene — make it beautiful
 - Write `$P/scene.py` fresh for this topic: a new visual world, palette and look each day (not the touchscreen layout).
   Study `examples/touchscreen_scene.py` for the vertical rules and the Urdu-aware `W(i, word)` helper (reads `audio/word_times.json`).
-- **First frame is the hook**: at t = 0 the screen already shows the most intriguing visual plus the big Roman Urdu
-  hook text (`hook_roman`, Bebas/cond, ≥ 7 % of frame height, one word highlighted) — no fade from black
-  (`film.fade_in = 0`), movement within 0.3 s. This first frame also works as a fallback thumbnail.
-- Every line gets a new visual beat landing on its key word (`W`), with a sound cue on hits. Kinetic labels,
-  glow, particles, depth, a moving camera; no empty or static stretch longer than ~1.5 s. End card with FOLLOW.
+- **First frame is the hook**: at t = 0 the screen already shows the *moment* (the viewer's POV: a hand on the
+  nozzle, a pillow, a phone in hand) plus the big Roman Urdu hook text (`hook_roman`, Bebas/cond, ≥ 7 % of frame
+  height, 3–5 words, one word highlighted) — no fade from black (`film.fade_in = 0`), movement within 0.3 s, a
+  sound hit in the first 0.5 s. This first frame also works as a fallback thumbnail.
+- Keep a human element (hand, silhouette, person) in the story beats so it feels like *your* moment, not a diagram.
+- Every line gets a new visual beat landing on its key word (`W`), with a sound cue on hits. A cut, push-in or
+  reveal at least every 2 s; kinetic labels, glow, particles, depth, a moving camera. Save the big reveal for the payoff.
+- End on a frame that matches the first frame (loop) with a small FOLLOW tag, not a long end card.
 - Vertical rules: `--size 1080x1920`; zoom 1 shows 3840 x 6827 world px; heroes in the top ~60 %
   (camera y = hero_y + 819/zoom); keep 62–78 % of frame height free for captions; type ≥ 3 % of frame height.
 - `python3 $S/prep_assets.py --project $P`, then probe 8–12 stills (`render.py --probe ... --size 1080x1920`),
@@ -85,7 +110,7 @@ python3 $S/render.py --project $P --cues && python3 $S/build_sfx.py --project $P
 python3 $S/render.py --project $P --size 1080x1920 --workers 3 --out $P/out/nocap.mp4 --audio $P/audio/mix.m4a
 python3 repo/tools/urdu_captions.py --project $P --font fonts/NotoNastaliqUrdu.ttf --video $P/out/nocap.mp4 --out $P/out/short.mp4
 ```
-Check: 30–60 s, 1080x1920 (vertical → YouTube files it as a Short), audio present, 4 frames look right.
+Check: 22–45 s, 1080x1920 (vertical → YouTube files it as a Short), audio present, 4 frames look right.
 Re-encode with `-crf 24` if > 90 MB.
 
 Thumbnail (1080x1920 JPG): grab the most intriguing moment from `nocap.mp4` (no captions), then
@@ -112,7 +137,8 @@ One `execute_zapier_write_action` call: app YouTube (`YouTubeV4CLIAPI`), action 
 (tool_name `youtube_upload_video`), default connection = EZOXIFY. No inspect calls needed — these params are known:
 - `video`: `https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/short.mp4`
 - `thumbnail`: `https://raw.githubusercontent.com/aizaz6241/ezox-howitworks-shorts/media/thumb.jpg` (sent in the same call — no separate thumbnail call)
-- `title`: Roman Urdu, ≤ 70 chars, curiosity + 1 emoji + `#shorts` (e.g. `Dastane Se Phone Kyun Nahi Chalta? 🤯 #shorts`)
+- `title`: Roman Urdu, ≤ 60 chars, the story moment or the shock, not a textbook question + 1 emoji + `#shorts`
+  (e.g. `Petrol Khud Ruk Gaya… Par Kaise? 🤯 #shorts`, `Is Nozzle Mein Koi Sensor Nahi! 😳 #shorts`)
 - `description`: 2–3 Roman Urdu lines (what you'll learn) / blank line / 1–2 English lines / blank line /
   one Urdu-script line / blank line / `#howitworks #urdu #shorts #science #<topic> #EZOXIFY`
 - `language_code`: `en`, `localized_title`: the English title (≤ 70 chars + emoji + #shorts), `localized_description`: English description

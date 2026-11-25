@@ -1,0 +1,42 @@
+{
+ "title": "Petrol Khud Ruk Gaya… Par Kaise?",
+ "hook_roman": "PETROL KHUD RUK GAYA?!",
+ "style_note": "Story style (from 2026-11-25): viewer inside the moment, hook in the first 2-3 words, a loop at every line, easiest words, ~30 s. Same topic as the 2026-11-24 video, rewritten to show the difference.",
+ "takes": [
+  {
+   "take": "T01_hook",
+   "lines": [
+    {"id": 1, "text": "کلک! آپ کی ٹینکی فُل… اور پیٹرول خود رک گیا۔", "spoken": "کلک! آپ کی ٹینکی فُل… اور پیٹرول خود رک گیا۔",
+     "hero": "POV: your hand on the nozzle in the car's tank, fuel rushing, CLICK - it stops", "typed": "", "gap_after": 0.25},
+    {"id": 2, "text": "لیکن نوزل کو پتہ کیسے چلا؟ اس میں تو کوئی سینسر ہی نہیں!", "spoken": "لیکن نوزل کو پتہ کیسے چلا؟ اس میں تو کوئی سینسر ہی نہیں!",
+     "hero": "x-ray sweeps the nozzle: empty inside, a chip icon crossed out", "typed": "NO SENSOR"}
+   ]
+  },
+  {
+   "take": "T02_story",
+   "lines": [
+    {"id": 3, "text": "سارا راز اس کی نوک پر ہے… ایک چھوٹا سا سوراخ۔", "spoken": "سارا راز اس کی نوک پر ہے… ایک چھوٹا سا سوراخ۔",
+     "hero": "camera dives to the tip; a tiny hole lights up", "typed": "TINY HOLE"},
+    {"id": 4, "text": "پیٹرول بہتا ہے تو یہ سوراخ ہوا پیتا رہتا ہے، بالکل اسٹرا کی طرح۔", "spoken": "پیٹرول بہتا ہے تو یہ سوراخ ہوا پیتا رہتا ہے، بالکل اسٹرا کی طرح۔",
+     "hero": "air dots sucked into the hole and up a thin tube; a straw in a glass beside it", "typed": "AIR IN"},
+    {"id": 5, "text": "پھر ٹینکی بھرتی ہے… اور پیٹرول اسی سوراخ کو ڈبو دیتا ہے۔", "spoken": "پھر ٹینکی بھرتی ہے… اور پیٹرول اسی سوراخ کو ڈبو دیتا ہے۔",
+     "hero": "fuel rises and swallows the hole; air dots freeze", "typed": "HOLE BLOCKED"},
+    {"id": 6, "text": "ہوا بند — اندر ایک ربڑ کی جِھلی کھنچتی ہے — اور… کلک!", "spoken": "ہوا بند — اندر ایک ربڑ کی جِھلی کھنچتی ہے — اور… کلک!",
+     "hero": "red glow, the rubber skin is pulled in, a latch lets go, the valve slams: CLICK", "typed": "CLICK!"}
+   ]
+  },
+  {
+   "take": "T03_payoff",
+   "lines": [
+    {"id": 7, "text": "اسی لیے جھاگ اٹھے تو ٹینکی بھرنے سے پہلے ہی کلک ہو جاتا ہے!", "spoken": "اسی لیے جھاگ اٹھے تو ٹینکی بھرنے سے پہلے ہی کلک ہو جاتا ہے!",
+     "hero": "foam climbs over the hole: early click", "typed": "FOAM = EARLY CLICK"},
+    {"id": 8, "text": "اگلی بار پمپ پر کلک سنیں… تو یاد رکھنا، یہ ہوا کا کمال ہے۔", "spoken": "اگلی بار پمپ پر کلک سنیں… تو یاد رکھنا، یہ ہوا کا کمال ہے۔",
+     "hero": "back to the first frame: your hand on the nozzle; small FOLLOW tag", "typed": "FOLLOW"}
+   ]
+  }
+ ],
+ "fact_notes": [
+  "Automatic shut-off fuel nozzles are mechanical: a small sensing hole near the spout tip, a tube back to a chamber, venturi suction while fuel flows, and a diaphragm that trips the valve latch when fuel covers the hole (HowStuffWorks; Hagerty).",
+  "Foam or splash-back covering the hole triggers the same mechanism early."
+ ]
+}
