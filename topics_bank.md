@@ -61,7 +61,7 @@ viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki 
 - Mobile balance "credit" kaise transfer hota hai?
 
 ## Nature & weather
-- Bijli (aasmani) chamakne ke baad garaj der se kyun aati hai?
+- Bijli (aasmani) chamakne ke baad garaj der se kyun aati hai? (done 2026-11-25)
 - Baadal itne bhaari ho kar bhi girte kyun nahi?
 - Aasmaan neela kyun hai aur shaam ko laal kyun?
 - Samandar ka paani namkeen kyun hai par darya ka meetha?
