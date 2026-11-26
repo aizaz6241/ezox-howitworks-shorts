@@ -1,0 +1,32 @@
+{
+ "title": "Screen Khud Ghoom Gayi… Par Kaise?",
+ "hook_roman": "SCREEN KHUD GHOOM GAYI?!",
+ "takes": [
+  {"take": "T01_hook", "lines": [
+   {"id": 1, "text": "آپ بستر پر لیٹے… اور اسکرین خود گھوم گئی!", "spoken": "آپ بستر پر لیٹے… اور اسکرین خود گھوم گئی!",
+    "hero": "POV: you lie on a pillow holding the phone; the video on screen flips sideways by itself", "typed": "", "gap_after": 0.25},
+   {"id": 2, "text": "فون کی تو آنکھیں نہیں… پھر اسے پتہ کیسے چلا؟", "spoken": "فون کی تو آنکھیں نہیں… پھر اسے پتہ کیسے چلا؟",
+    "hero": "the phone alone in the dark, a big question mark; no eyes", "typed": "NO EYES?"}
+  ]},
+  {"take": "T02_story", "lines": [
+   {"id": 3, "text": "راز اندر چھپا ہے — چاول کے دانے سے بھی چھوٹی ایک چِپ۔", "spoken": "راز اندر چھپا ہے — چاول کے دانے سے بھی چھوٹی ایک چِپ۔",
+    "hero": "x-ray dive into the phone: a tiny chip next to a grain of rice", "typed": "SMALLER THAN RICE"},
+   {"id": 4, "text": "اس کے اندر ایک ننھا سا وزن، باریک اسپرنگوں پر لٹکا ہے۔", "spoken": "اس کے اندر ایک ننھا سا وزن، باریک اسپرنگوں پر لٹکا ہے۔",
+    "hero": "inside the chip: a small block hanging on thin zig-zag springs, comb fingers beside it", "typed": "TINY WEIGHT"},
+   {"id": 5, "text": "آپ فون موڑتے ہیں… اور زمین اس وزن کو نیچے کھینچتی ہے۔", "spoken": "آپ فون موڑتے ہیں… اور زمین اس وزن کو نیچے کھینچتی ہے۔",
+    "hero": "the chip tilts; a big GRAVITY arrow pulls the weight down", "typed": "GRAVITY"},
+   {"id": 6, "text": "وزن بال سے بھی کم کھسکتا ہے — اور چِپ سمجھ جاتی ہے کہ نیچے کس طرف ہے!", "spoken": "وزن بال سے بھی کم کھسکتا ہے — اور چِپ سمجھ جاتی ہے کہ نیچے کس طرف ہے!",
+    "hero": "the weight slides a hair; fingers light up on one side; DOWN arrow locks", "typed": "DOWN = THIS WAY"}
+  ]},
+  {"take": "T03_payoff", "lines": [
+   {"id": 7, "text": "اسی لیے لیٹ کر دیکھیں تو فون آپ کو نہیں… زمین کو دیکھتا ہے!", "spoken": "اسی لیے لیٹ کر دیکھیں تو فون آپ کو نہیں… زمین کو دیکھتا ہے!",
+    "hero": "back to bed: you lie sideways, gravity arrow points to the floor, the screen turns toward the floor", "typed": "IT FOLLOWS EARTH"},
+   {"id": 8, "text": "اگلی بار اسکرین گھومے… تو زمین کو شکریہ کہنا!", "spoken": "اگلی بار اسکرین گھومے… تو زمین کو شکریہ کہنا!",
+    "hero": "first frame again: pillow, phone flips; small FOLLOW tag", "typed": "FOLLOW"}
+  ]}
+ ],
+ "fact_notes": [
+  "Phones detect orientation with a MEMS accelerometer: a silicon chip smaller than a grain of rice with a tiny proof mass on silicon springs; gravity shifts it by nanometres, changing the capacitance between comb fingers (MakeTechEasier; arXiv 1507.02224).",
+  "Auto-rotate uses the direction of gravity relative to the phone, not the user's face, so lying on your side rotates the screen (Android Developers Blog, 'One Screen Turn Deserves Another')."
+ ]
+}
