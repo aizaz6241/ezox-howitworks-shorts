@@ -8,7 +8,7 @@ viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki 
 ## Phone & tech
 - Phone ki battery 100% ke baad charge kyun nahi hoti? (charge controller)
 - WhatsApp message "double blue tick" kaise jaanta hai ke aap ne parh liya?
-- Phone ko pata kaise chalta hai ke woh ulta hai ya seedha? (accelerometer/gyroscope)
+- Phone ko pata kaise chalta hai ke woh ulta hai ya seedha? (accelerometer/gyroscope) (done 2026-11-26)
 - Face unlock andhere mein bhi kaise kaam karta hai? (infrared dots)
 - Wi-Fi diwaar ke paar kaise chala jata hai?
 - Bluetooth earbuds ko kaise pata ke kaun sa left hai?
