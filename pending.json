@@ -1,1 +1,26 @@
-{"stage":"voiced","date":"2026-11-26","slot":2,"topic":"Phone auto-rotate"}
+{
+ "stage": "rendered",
+ "date": "2026-11-26",
+ "slot": 2,
+ "title": "Screen Khud Ghoom Gayi… Par Kaise? 🤯 #shorts",
+ "title_en": "Why Your Phone Screen Rotates by Itself 🤯 #shorts",
+ "description": "Bistar par lete… aur phone ki screen khud ghoom gayi! Phone ki to aankhen nahi — phir use pata kaise chala?\nRaaz: chawal ke daane se bhi chhoti ek chip, jis mein springs par latka ek nanha sa wazan hai. Zameen use neeche kheenchti hai… aur phone samajh jata hai ke neeche kis taraf hai!\n\nYour phone has a chip smaller than a grain of rice (an accelerometer) with a microscopic weight on springs. Gravity pulls it, so the phone knows which way is down — that's why the screen flips when you lie on your side.\n\nآپ کا فون آپ کو نہیں، زمین کو دیکھتا ہے!\n\n#howitworks #urdu #shorts #science #autorotate #EZOXIFY",
+ "description_en": "Ever lain down in bed and watched your phone screen rotate by itself? Your phone has no eyes — it has a chip smaller than a grain of rice (an accelerometer) with a microscopic weight on tiny springs. Gravity pulls the weight, it shifts less than the width of a hair, and the chip knows which way is down. That's why the screen flips when you lie on your side: it follows the Earth, not you.\n\n#howitworks #shorts #science #autorotate #EZOXIFY",
+ "tags": [
+  "auto rotate",
+  "screen rotation",
+  "accelerometer",
+  "how phone knows orientation",
+  "phone screen kyun ghoomti hai",
+  "mobile science urdu",
+  "how it works urdu",
+  "gravity",
+  "smartphone sensor",
+  "phone ki screen",
+  "فون اسکرین",
+  "EZOXIFY"
+ ],
+ "topic": "Phone auto-rotate — how the phone knows which way is down (accelerometer: tiny weight on springs + gravity)",
+ "category": "phone/tech",
+ "duration": 35.5
+}
