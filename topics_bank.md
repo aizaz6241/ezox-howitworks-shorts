@@ -21,7 +21,7 @@ viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki 
 
 ## Home & kitchen
 - Microwave khana andar se kaise garam karta hai, plate thandi kyun rehti hai?
-- Fridge andar thanda karta hai to peeche se garam kyun hota hai?
+- Fridge andar thanda karta hai to peeche se garam kyun hota hai? (done 2026-11-26)
 - Pressure cooker ki seeti kyun bajti hai — aur khana jaldi kyun pakta hai?
 - Non-stick pan par cheez chipakti kyun nahi?
 - UPS bijli jaane ke ek second mein kaise switch kar leta hai?
