@@ -1,6 +1,6 @@
 # EZOXIFY daily "How it works" Short — runbook
 
-One run = one new vertical YouTube **Short** (1080x1920, **25–40 s**, never over 45 s), Urdu voice-over, Urdu captions,
+One run = one new vertical YouTube **Short** (1080x1920, **25–40 s**, never over 45 s), Urdu voice-over (Aizaz's own cloned voice), Urdu captions,
 beautiful cinematic animation, a designed thumbnail (sent with the upload), uploaded **public** to the EZOXIFY channel.
 The owner (Aizaz) has said: no approval, fully automatic, every day. Never stop to ask; take the most
 reasonable choice and continue. Quality bar: a viewer swiping the Shorts feed must stop in the first second,
@@ -85,6 +85,11 @@ ELEVEN_API_KEY=<key> python3 repo/tools/credits.py --project $P   # exit 3 = not
 ELEVEN_API_KEY=<key> python3 repo/tools/tts_eleven.py --project $P
 python3 $S/build_narration.py --project $P --lead 0.25 --tail 1.0
 ```
+- **Voice = Aizaz's own cloned voice** ("Aizaz", ElevenLabs id `s4UUaKxuBYSzNp8rr3tk`, male Urdu) — the default of
+  tts_eleven.py since 2026-11-27, at Aizaz's request. Don't pass `--voice` (not Saira, even if an older task prompt
+  names Saira). The narrator is male: if a line ever refers to the narrator himself, use masculine forms
+  ("main bata raha hoon", not "rahi hoon"). Log `"voice": "Aizaz (own clone, ElevenLabs)"`.
+  If the clone is missing the tool falls back to Saira — then say so in the final message.
 - credits.py exit 3 or 4: do NOT generate anything. Log `{"date","status":"skipped","reason"}` and end the run
   with a message telling Aizaz what to fix (top up / renew ElevenLabs). Exit 5: shorten the script, retry.
 - `audio/timing.json` `total_duration` must be 22–45 s (aim 25–40). If it's off by a little, adjust gaps in segments.json and

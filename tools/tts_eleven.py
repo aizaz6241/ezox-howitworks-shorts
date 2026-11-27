@@ -2,6 +2,9 @@
 
     ELEVEN_API_KEY=... python3 tts_eleven.py --project <dir> [--voice ID] [--model eleven_v4]
 
+Default voice: Aizaz (the owner's own cloned voice). Falls back to Saira if the clone is gone, and to
+the premade George voice if the plan refuses paid voices.
+
 Reads <project>/script.json (takes -> lines with "spoken"), writes:
   audio/lines/segNN.wav       one trimmed clip per line (48 kHz mono)
   audio/segments.json         what build_narration.py expects
@@ -12,6 +15,7 @@ import argparse, base64, json, os, pathlib, subprocess, sys, time, urllib.error,
 
 import numpy as np
 
+AIZAZ = "s4UUaKxuBYSzNp8rr3tk"      # Aizaz - the channel owner's own cloned Urdu voice (male); default since 2026-11-27
 SAIRA = "hA0RyxVmITMttngSpcOF"      # Saira - Rich, Poetic Urdu Storyteller (needs a paid plan via API)
 FALLBACK = "JBFqnCBsd6RMkjVDRZzb"   # George (premade; works on the free plan)
 SR = 48000
@@ -74,7 +78,7 @@ def word_times(text, alignment, offset):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", required=True)
-    ap.add_argument("--voice", default=SAIRA)
+    ap.add_argument("--voice", default=AIZAZ)
     ap.add_argument("--model", default="eleven_v4")
     a = ap.parse_args()
     key = os.environ.get("ELEVEN_API_KEY") or sys.exit("set ELEVEN_API_KEY")
@@ -90,6 +94,9 @@ def main():
         try:
             d = tts(key, voice, a.model, l["spoken"], prev_t, next_t)
         except RuntimeError as e:
+            if voice == AIZAZ and ("404" in str(e) or "voice_not_found" in str(e)):
+                print("Aizaz's cloned voice not found on this account -> falling back to Saira", file=sys.stderr)
+                return main_with_voice(a, SAIRA)
             if "402" in str(e) and voice != FALLBACK:
                 print("paid voice refused on this plan -> falling back to premade voice for the whole Short", file=sys.stderr)
                 voice = FALLBACK
