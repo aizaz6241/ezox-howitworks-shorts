@@ -86,5 +86,19 @@
   "voice": "Saira (ElevenLabs)",
   "slot": 2,
   "social": "skipped (slot 2)"
+ },
+ {
+  "date": "2026-11-27",
+  "topic": "Smell of rain on dry soil (petrichor) — soil bacteria make geosmin; raindrops trap air bubbles that pop like soda fizz and fling the scent up; your nose catches one drop in a pool",
+  "category": "nature/weather",
+  "title": "Pehli Boond… Aur Ye Khushboo Kahan Se? 🌧️ #shorts",
+  "title_en": "First Raindrop… Where Does That Smell Come From? 🌧️ #shorts",
+  "video_id": "ZO0KhhjtjY8",
+  "duration": 38.0,
+  "voice": "Aizaz (own clone, ElevenLabs)",
+  "slot": 1,
+  "social": {
+   "tiktok": "ok"
+  }
  }
 ]
