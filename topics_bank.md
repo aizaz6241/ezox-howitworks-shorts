@@ -34,7 +34,7 @@ viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki 
 
 ## Body
 - Neend mein jhatka kyun lagta hai jaise gir rahe hon?
-- Ungliyan paani mein der tak rehne se jhurriyaan kyun ho jati hain?
+- Ungliyan paani mein der tak rehne se jhurriyaan kyun ho jati hain? (done 2026-11-27)
 - Pyaz kaatne par aansoo kyun aate hain?
 - Kaan mein "seeti" ki awaaz kahan se aati hai?
 - Thandi cheez khane se sar mein "brain freeze" kyun hota hai?
