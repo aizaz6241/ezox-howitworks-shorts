@@ -24,7 +24,7 @@ viewer into the moment in 2–3 words (see RUNBOOK step 4), e.g. "CLICK! Aap ki 
 - Fridge andar thanda karta hai to peeche se garam kyun hota hai? (done 2026-11-26)
 - Pressure cooker ki seeti kyun bajti hai — aur khana jaldi kyun pakta hai?
 - Non-stick pan par cheez chipakti kyun nahi?
-- UPS bijli jaane ke ek second mein kaise switch kar leta hai?
+- UPS bijli jaane ke ek second mein kaise switch kar leta hai? (done 2026-11-28)
 - Inverter AC bijli kaise bachata hai?
 - Geyser ka paani bina mixer ke itna garam kaise rehta hai?
 - Water filter (RO) ganda paani kaise saaf karta hai?

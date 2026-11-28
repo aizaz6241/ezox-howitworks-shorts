@@ -112,5 +112,19 @@
   "voice": "Aizaz (own clone, ElevenLabs)",
   "slot": 2,
   "social": "skipped (slot 2)"
+ },
+ {
+  "date": "2026-11-28",
+  "topic": "UPS switch-over — the 'tak' when the power goes: a relay flips the load from WAPDA to the battery in ~10-20 ms (faster than a blink), and the inverter turns the battery's one-way DC into AC that swings 50 times a second",
+  "category": "home/kitchen",
+  "title": "Bijli Gayi… Par Pankha Ruka Hi Nahi! 😳 #shorts",
+  "title_en": "Power Cut… But the Fan Didn't Stop! How a UPS Works 😳 #shorts",
+  "video_id": "miN5RkPgC0w",
+  "duration": 40.6,
+  "voice": "Aizaz (own clone, ElevenLabs)",
+  "slot": 1,
+  "social": {
+   "tiktok": "ok"
+  }
  }
 ]
