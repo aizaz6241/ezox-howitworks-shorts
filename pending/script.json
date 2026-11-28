@@ -1,0 +1,36 @@
+{
+ "title": "Bijli Gayi… Par Pankha Ruka Hi Nahi!",
+ "hook_roman": "BIJLI GAYI… PANKHA NAHI RUKA?!",
+ "takes": [
+  {"take": "T01_hook", "lines": [
+   {"id": 1, "text": "ٹک! بجلی گئی… لیکن پنکھا رکا ہی نہیں۔", "spoken": "ٹک! بجلی گئی… لیکن پنکھا رکا ہی نہیں۔",
+    "hero": "POV: you lie under a spinning ceiling fan at night; the city outside the window goes dark - TAK - but the fan keeps spinning", "typed": "", "gap_after": 0.3},
+   {"id": 2, "text": "نہ اندھیرا، نہ شور۔ آخر بجلی آئی کہاں سے؟", "spoken": "نہ اندھیرا، نہ شور۔ آخر بجلی آئی کہاں سے؟",
+    "hero": "the bulb still glows; a cable from the fan runs down into the dark", "typed": "WHERE FROM?"}
+  ]},
+  {"take": "T02_story", "lines": [
+   {"id": 3, "text": "راز وہ ٹک ہے… یو پی ایس کے اندر ایک چھوٹا سا سوئچ۔", "spoken": "راز وہ ٹک ہے… یو پی ایس کے اندر ایک چھوٹا سا سوئچ۔",
+    "hero": "camera follows the cable to the UPS box; x-ray shows a tiny switch arm inside", "typed": "THE SWITCH"},
+   {"id": 4, "text": "بجلی ہو تو یہ سوئچ واپڈا سے جڑا رہتا ہے… اور بیٹری چپکے سے بھرتی رہتی ہے۔", "spoken": "بجلی ہو تو یہ سوئچ واپڈا سے جڑا رہتا ہے… اور بیٹری چپکے سے بھرتی رہتی ہے۔",
+    "hero": "the arm touches the WAPDA contact; the battery bars fill up", "typed": "CHARGING"},
+   {"id": 5, "text": "بجلی جاتے ہی… ٹک! سوئچ پلٹ کر بیٹری سے جڑ جاتا ہے۔", "spoken": "بجلی جاتے ہی… ٹک! سوئچ پلٹ کر بیٹری سے جڑ جاتا ہے۔",
+    "hero": "WAPDA wire goes dark, the arm flips down to the battery with a flash", "typed": "TAK!"},
+   {"id": 6, "text": "لیکن بیٹری کی بجلی ایک ہی طرف بہتی ہے… پنکھے کو آگے پیچھے جھولتی بجلی چاہیے۔", "spoken": "لیکن بیٹری کی بجلی ایک ہی طرف بہتی ہے… پنکھے کو آگے پیچھے جھولتی بجلی چاہیے۔",
+    "hero": "dots flow one way along a straight wire; then they need to swing", "typed": "ONE WAY"},
+   {"id": 7, "text": "تو یو پی ایس اسے ہر سیکنڈ میں پچاس بار جھولا دیتا ہے!", "spoken": "تو یو پی ایس اسے ہر سیکنڈ میں پچاس بار جھولا دیتا ہے!",
+    "hero": "the dots swing back and forth, a wave draws on, a counter rolls to 50", "typed": "50 TIMES / SECOND"}
+  ]},
+  {"take": "T03_payoff", "lines": [
+   {"id": 8, "text": "اور یہ سب… پلک جھپکنے سے بھی تیز۔ اسی لیے پنکھا رکتا ہی نہیں!", "spoken": "اور یہ سب… پلک جھپکنے سے بھی تیز۔ اسی لیے پنکھا رکتا ہی نہیں!",
+    "hero": "an eye blinks; the switch time bar is tiny next to the blink bar", "typed": "FASTER THAN A BLINK"},
+   {"id": 9, "text": "اگلی بار ٹک سنیں… تو سمجھ جانا، چوکیدار جاگ گیا۔", "spoken": "اگلی بار ٹک سنیں… تو سمجھ جانا، چوکیدار جاگ گیا۔",
+    "hero": "back to the first frame: you under the fan; FOLLOW tag", "typed": "FOLLOW", "gap_after": 0.3}
+  ]}
+ ],
+ "fact_notes": [
+  "Home UPS units in Pakistan are mostly offline/standby (or line-interactive) inverters: on mains, a relay connects the load to the mains and a charger keeps the battery topped up; when mains fails the relay switches the load to the inverter. The relay makes the audible click (Wikipedia 'Uninterruptible power supply'; propakistani.pk UPS buying guide).",
+  "Transfer time of standby UPS is typically a few to ~20 milliseconds; 'computer mode' UPS ~10 ms (Wikipedia; Schneider Electric FAQ).",
+  "A battery gives DC (one direction); the inverter converts it to AC like the grid, which in Pakistan is 50 Hz = 50 back-and-forth cycles a second.",
+  "A human blink lasts about 100-400 ms (Harvard BioNumbers 100706), so a ~10-20 ms switch is far faster than a blink; the fan's own spin carries it through the gap."
+ ]
+}
